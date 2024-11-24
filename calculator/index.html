@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalmeLator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toggleBtn"></div>
+    <div class="calculator">
+      <div class="buttons">
+        <h2 id="value"></h2>
+        <span id="clear">Clear</span>
+        <span>/</span>
+        <span>*</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>-</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span id="plus">+</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>0</span>
+        <span>00</span>
+        <span>.</span>
+        <span id="equal">=</span>
+      </div>
+    </div>
+
+    <script>
+      let audio = new Audio("beep.mp3");
+      let buttons = document.querySelector(".buttons");
+      let btn = document.querySelectorAll("span");
+      let value = document.getElementById("value");
+      let toggleBtn = document.querySelector(".toggleBtn");
+      let body = document.querySelector("body");
+
+      function formatNumber(number) {
+        let numberStr = number.toString();
+        let max = 12;
+        if (numberStr.length > max) {
+          alert("maks number 12 digit, choose 'clear' to reset");
+          return numberStr.slice(0, max) + "..";
+        }
+        return numberStr;
+      }
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function () {
+          if (this.innerHTML == "=") {
+            let formatNum = formatNumber(eval(value.innerHTML));
+            value.innerHTML = formatNum;
+          } else {
+            if (this.innerHTML == "Clear") {
+              value.innerHTML = "";
+            } else {
+              let formatNum = formatNumber((value.innerHTML += this.innerHTML));
+              value.innerHTML = formatNum;
+            }
+          }
+          audio.playbackRate = 9.0;
+          audio.play();
+        });
+        toggleBtn.onclick = function () {
+          body.classList.toggle("dark");
+        };
+      }
+    </script>
+  </body>
+</html>

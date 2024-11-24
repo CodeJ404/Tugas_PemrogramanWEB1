@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portofolio | Jiar Jihad</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <a href="#" class="logo">Portofolio</a>
+      <div class="toggle" onclick="toggleMenu();"></div>
+      <ul class="menu">
+        <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu();">About</a></li>
+        <li><a href="#work" onclick="toggleMenu();">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <!-- Home -->
+    <section class="banner" id="home">
+      <div class="textBx">
+        <h2><br />Hello, I'm <br /><span>Jiar Jihad.</span></h2>
+        <h3>I'm a student at Pamulang University</h3>
+        <a href="#about" class="btn">About Me</a>
+      </div>
+    </section>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="heading">
+        <h2>About Me</h2>
+      </div>
+      <div class="content">
+        <div class="contentBx w50">
+          <h3>I'm a student at Pamulang University</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
+            ipsa ex maxime nobis, nemo nam quas mollitia alias ipsam suscipit
+            soluta minus reprehenderit officiis ipsum nihil deleniti, enim
+            libero, inventore expedita obcaecati id recusandae iste iusto atque?
+            Alias saepe, possimus sed sapiente omnis odit voluptatem vitae cum,
+            aliquid corporis amet. <br /><br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+            fugit. Quibusdam, delectus laborum ipsa dolorum odio ipsum maxime
+            iure dolore incidunt deserunt voluptatibus nostrum iste fugiat
+            ducimus officia cumque omnis maiores eligendi atque. Dolore
+            consequatur, optio totam sit doloremque adipisci eius, atque
+            distinctio veniam est ea placeat incidunt tempora. Eos.
+          </p>
+        </div>
+        <div class="w50">
+          <img src="image/img1.jpg" alt="img1" class="img" />
+        </div>
+      </div>
+    </section>
+    <!-- Work -->
+    <section class="work" id="work">
+      <div class="heading">
+        <h2>My Work</h2>
+      </div>
+      <div class="content">
+        <div class="workBx">
+          <img src="image/work1.jpg" alt="work1" />
+          <a href="calculator/index.html" target="_blank">Calculator</a>
+        </div>
+        <div class="workBx">
+          <img src="image/work2.jpg" alt="work2" />
+          <a href="form login/index.html" target="_blank">Form_Login</a>
+        </div>
+        <div class="heading">
+          <a href="#" class="btn">View More</a>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        let header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+
+      function toggleMenu() {
+        let menuToggle = document.querySelector(".toggle");
+        let menu = document.querySelector(".menu");
+        menuToggle.classList.toggle("active");
+        menu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
