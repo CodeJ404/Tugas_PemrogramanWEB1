@@ -115,3 +115,38 @@ body {
   border-radius: 50%;
   margin-top: 5px;
 }
+
+@media (max-width: 550px) {
+  .wrapper {
+    width: 80vmin;
+    height: 85vmin;
+  }
+  .game-details {
+    font-size: 12px;
+  }
+  .controls {
+    flex-direction: column;
+    width: 50vmin;
+  }
+  .dpad {
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 940px) {
+  .wrapper {
+    width: 80vmin;
+    height: 85vmin;
+  }
+  .controls {
+    flex-direction: column;
+    width: 50vmin;
+  }
+  .dpad {
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px;
+    gap: 5px;
+  }
+}
