@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  background-image: url(arcade.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #293447;
+}
+
+.game-details {
+  color: #b8c6dc;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-board {
+  width: 100%;
+  height: 100%;
+  background-color: #212837;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food {
+  background: #ff003d;
+}
+
+.play-board .head {
+  background: #60cbff;
+  border-radius: 2px;
+}
+
+.controls {
+  background: #293447;
+  padding: 10px;
+  display: flex;
+  width: 65vmin;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.dpad {
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  grid-template-rows: 30px 30px 30px;
+  gap: 1px;
+  width: fit-content;
+  background: #555;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.dpad i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Posisi panah */
+.up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.down {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.btn {
+  color: red;
+  background: #212837;
+  padding: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
