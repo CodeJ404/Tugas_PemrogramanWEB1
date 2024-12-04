@@ -53,6 +53,12 @@ body {
 .play-board .head {
   background: #60cbff;
   border-radius: 2px;
+  z-index: 999;
+  border: 1px solid white;
+}
+.play-board .body {
+  background: #018fd6;
+  border: 1px solid white;
 }
 
 .controls {
