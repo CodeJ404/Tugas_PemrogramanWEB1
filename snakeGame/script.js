@@ -6,6 +6,7 @@ const resetBtn = document.querySelector(".btn");
 const bgAudio = new Audio("sound/background.mp3");
 const blipAudio = new Audio("sound/blip.mp3");
 const lossAudio = new Audio("sound/loss.mp3");
+const head = document.getElementsByClassName("head");
 
 let gameOver = false;
 let foodX, foodY;
@@ -105,7 +106,10 @@ const initGame = () => {
 
   for (let i = 0; i < snakeBody.length; i++) {
     // menambahkan div untuk setiap bagian badan ular
-    htmlMarkup += `<div class="head" style="grid-area : ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+    if (head.length > 1) {
+      htmlMarkup += `<div class="body" style="grid-area : ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+    }
+    htmlMarkup += `<div class="head" style="grid-area : ${snakeBody[0][1]} / ${snakeBody[0][0]}"></div>`;
 
     // mengecek jika ular mengenai badan, jika iya maka game over bernilai true
     if (
@@ -121,5 +125,5 @@ const initGame = () => {
 };
 
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 125);
+setIntervalId = setInterval(initGame, 90);
 document.addEventListener("keydown", changeDirection);
