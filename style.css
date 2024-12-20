@@ -182,7 +182,6 @@ img {
   background-color: rgb(51, 218, 51);
   color: #111;
   font-weight: 600;
-  text-align: center;
 }
 
 .work .content .workBx h3 {
@@ -206,7 +205,59 @@ img {
 
 .work .content .workBx:hover h3,
 .work .content .workBx:hover a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate .content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.certificate .content .certBx {
+  background-color: #111;
+  width: 30%;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.certificate .content .certBx .logo {
+  width: 80px;
+  height: 80px;
+  background-color: #2e2e2e;
+  border: 2px solid rgb(87, 87, 87);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate .content .certBx .logo i {
+  font-size: 50px;
+}
+
+.certificate .content .certBx .desk {
+  width: 200px;
+}
+
+.certificate .content .certBx .desk img {
+  width: 100px;
+}
+
+.certificate .content .certBx .desk .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  font-size: 12px;
+  padding: 7px;
 }
 
 @media (max-width: 991px) {
@@ -288,6 +339,12 @@ img {
   .work .content .workBx {
     width: 100%;
   }
+  .certificate .content {
+    flex-direction: row;
+  }
+  .certificate .content .certBx {
+    width: 49%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -300,5 +357,11 @@ img {
   }
   section {
     padding: 100px 20px;
+  }
+  .certificate .content {
+    flex-direction: column;
+  }
+  .certificate .content .certBx {
+    width: 100%;
   }
 }
